@@ -1,5 +1,6 @@
 const generateBtn = document.querySelector(".generate");
-const poemDisplay = document.querySelector(".poem-display")
+const poemDisplay = document.querySelector(".poem-display");
+let alreadyDisplayed = [];
 
 let poemsArr = [
   {
@@ -883,164 +884,144 @@ let poemsArr = [
     id: 13
   },
   {
-    poem: ``,
-    chapter: "",
-    id: ""
+    poem: `it felt like you threw me
+            <br/>
+            so far from myself
+            <br/>
+            i’ve been trying to find my way back ever since`,
+    chapter: "falling",
+    id: 14
   },
   {
-    poem: ``,
-    chapter: "",
-    id: ""
+    poem: `i reduced my body to aesthetics
+          <br/>
+          forgot the work it did to keep me alive
+          <br/>
+          with every beat and breath
+          <br/>
+          declared it a grand failure for not looking like theirs
+          <br/>
+          searched everywhere for a miracle
+          <br/>
+          foolish enough to not realize
+          <br/>
+          i was already living in one`,
+    chapter: "falling",
+    id: 15
   },
   {
-    poem: ``,
-    chapter: "",
-    id: ""
+    poem: `the irony of loneliness
+            <br/>
+            is we all feel it
+            <br/>
+            at the same time`,
+            chapter: "falling",
+            id: 16,
+            title: "together"
   },
   {
-    poem: ``,
-    chapter: "",
-    id: ""
+    poem: `we have been dying
+            <br/>
+            since we got here
+            <br/>
+            and forgot to enjoy the view`,
+    chapter: "falling",
+    id: 17,
+    title: "live fully"
   },
   {
-    poem: ``,
-    chapter: "",
-    id: ""
+    poem: `you were mine
+          <br/>
+          and my life was full
+          <br/>
+          you are no longer mine
+          <br/>
+          and my life
+          <br/>
+          is full`,
+    chapter: "falling",
+    id: 18
   },
   {
-    poem: ``,
-    chapter: "",
-    id: ""
+    poem: `my eyes
+          <br/>
+          make mirrors out of
+          <br/>
+          every reflective surface they pass
+          <br/>
+          searching for something beautiful looking back
+          <br/>
+          my ears fish for compliments and praise
+          <br/>
+          but no matter how far they go looking
+          <br/>
+          nothing is enough for me
+          <br/>
+          i go to clinics and department stores
+          <br/>
+          for pretty potions and new techniques
+          <br/>
+          i’ve tried the lasers
+          <br/>
+          i’ve tried the facials
+          <br/>
+          i’ve tried the blades and expensive creams
+          <br/>
+          for a hopeful minute they fill me
+          <br/>
+          make me glow from cheek to cheek
+          <br/>
+          but as soon as i feel beautiful
+          <br/>
+          their magic disappears suddenly
+          <br/>
+          where am i supposed to find it
+          <br/>
+          i am willing to pay any price
+          <br/>
+          for a beauty that makes heads turn
+          <br/>
+          every moment day and night`,
+    chapter: "falling",
+    id: 19
   },
   {
-    poem: ``,
-    chapter: "",
-    id: ""
+    poem: `this place makes me
+          <br/>
+          the kind of exhausted that has
+          <br/>
+          nothing to do with sleep
+          <br/>
+          and everything to do with
+          <br/>
+          the people around me
+          `,
+    chapter: "falling",
+    id: 20,
+    title: "introvert"
   },
   {
-    poem: ``,
-    chapter: "",
-    id: ""
+    poem: `you must see no worth in yourself
+    <br/>
+    if you find me worth less
+    <br/>
+    after you’ve touched me
+    <br/>
+    as if your hands on my body
+    <br/>
+    magnify you
+    <br/>
+    and reduce me to nothing
+    `,
+    chapter: "falling",
+    id: 21,
+    title: "worth is not something we transfer"
   },
   {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
-  },
-  {
-    poem: ``,
-    chapter: "",
-    id: ""
+    poem: `you do not just wake up and become the butterfly`,
+    chapter: "falling",
+    id: 22,
+    title: "growth is a process"
   },
   {
     poem: ``,
@@ -1053,6 +1034,12 @@ let poemsArr = [
 generateBtn.addEventListener("click", ranNum);
 
 function newPoem(num){
+  if (poemsArr.length === 0){
+    poemsArr.push(...alreadyDisplayed)
+    alreadyDisplayed = []
+  }
+
+
   poemDisplay.innerHTML = ""
   let poemDiv = document.createElement("div")
   let chapterDiv = document.createElement("div")
@@ -1071,6 +1058,10 @@ function newPoem(num){
   poemDisplay.appendChild(poemDiv)
   poemDisplay.appendChild(chapterDiv)
   console.log(poemsArr[num].chapter, poemsArr[num].id)
+
+  alreadyDisplayed.push(poemsArr[num])
+  poemsArr.splice(num, 1)
+  console.log(poemsArr.length, alreadyDisplayed.length)
 }
 
 function ranNum(){
