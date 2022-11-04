@@ -1033,6 +1033,8 @@ let poemsArr = [
 
 generateBtn.addEventListener("click", ranNum);
 
+ranNum()
+
 function newPoem(num){
   if (poemsArr.length === 0){
     poemsArr.push(...alreadyDisplayed)
