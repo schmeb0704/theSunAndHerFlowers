@@ -115,7 +115,7 @@ body{
   height: 150px;
 }
 
-@media screen (max-width: 600px){
+@media screen and (max-width: 600px){
   .picture, .leaves{
     height: 100px;
   }
