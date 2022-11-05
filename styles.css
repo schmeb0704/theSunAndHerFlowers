@@ -112,9 +112,16 @@ body{
   height: 150px;
 }
 
+@media (max-width: 720px){
+  .picture, .leaves{
+    height: 150px;
+  }
+
+}
+
 @media (max-width: 600px){
   .picture, .leaves{
-    height: 50px;
+    height: 100px;
   }
 
 }
