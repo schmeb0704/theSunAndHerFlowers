@@ -118,7 +118,19 @@ body{
   .picture, .leaves{
     height: 100px;
   }
+   .flower, .flower-2{
+     width: 150px;
+  }
 
+}
+
+@media (max-width: 650px){
+  .picture, .leaves{
+    height: 120px;
+  }
+   .flower, .flower-2{
+     width: 150px;
+  }
 }
 
 @media (max-width: 720px){
