@@ -132,9 +132,3 @@ body{
      width: 150px;
   }
 }
-
-@media (max-width: 720px){
-  .picture, .leaves{
-    height: 150px;
-  }
-}
