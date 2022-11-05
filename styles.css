@@ -119,6 +119,10 @@ body{
   .picture, .leaves{
     height: 100px;
   }
+  .flower-2{
+    right: -20px;
+    top: -24px;
+  }
 
 }
 
