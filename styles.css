@@ -121,14 +121,6 @@ body{
    .flower, .flower-2{
      width: 100px;
   }
-
 }
 
-@media (max-width: 650px){
-  .picture, .leaves{
-    height: 150px;
-  }
-   .flower, .flower-2{
-     width: 100px;
-  }
-}
+
