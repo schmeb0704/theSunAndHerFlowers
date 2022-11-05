@@ -1031,7 +1031,8 @@ let poemsArr = [
   
 ]
 
-ranNum()
+newPoem(Math.floor(Math.random()*poemsArr.length))
+
 generateBtn.addEventListener("click", ranNum);
 
 
