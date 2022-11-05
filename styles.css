@@ -92,9 +92,6 @@ body{
   margin-top: 0;
 }
 
-.poem-display{
-
-}
 
 .leaves{
   height: 250px;
@@ -118,3 +115,9 @@ body{
   height: 150px;
 }
 
+@media screen (max-width: 600px){
+  .picture, .leaves{
+    height: 100px;
+  }
+
+}
