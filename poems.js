@@ -1029,8 +1029,6 @@ let poemsArr = [
   },
 ]
 
-console.log(poemsArr)
-
 newPoem()
 
 function newPoem() {
