@@ -1,6 +1,6 @@
 const generateBtn = document.querySelector(".generate");
 const poemDisplay = document.querySelector(".poem-display");
-let alreadyDisplayed = [];
+generateBtn.addEventListener('click', newPoem)
 
 let poemsArr = [
   {
@@ -8,15 +8,15 @@ let poemsArr = [
     poem: `on the last day of love 
     <br/>
     my heart cracked inside my body`,
-    chapter: "wilting",
-    id: 1
+    chapter: 'wilting',
+    id: 1,
   },
   {
     poem: `i spent the entire night
     <br/>
     casting spells to bring you back`,
-    chapter: "wilting",
-    id: 2
+    chapter: 'wilting',
+    id: 2,
   },
   {
     poem: `i reached for the last bouquet of flowers
@@ -34,8 +34,8 @@ let poemsArr = [
             i popped their heads off
             <br/>
             and ate them`,
-    chapter: "wilting",
-    id: 3
+    chapter: 'wilting',
+    id: 3,
   },
   {
     poem: `i stuffed a towel at the foot of every door
@@ -51,9 +51,9 @@ let poemsArr = [
            no one is coming in
            <br/>
            and no one is going out`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 4,
-    title: "cemetery"
+    title: 'cemetery',
   },
   {
     poem: `you left
@@ -63,8 +63,8 @@ let poemsArr = [
             yet i deserved someone
             <br/>
             who was willing to stay`,
-    chapter: "wilting",
-    id: 5
+    chapter: 'wilting',
+    id: 5,
   },
   {
     poem: `i spend days in bed debilitated by loss
@@ -124,9 +124,9 @@ let poemsArr = [
             by running down your body
             <br/>
             i ripped the sky apart for allowing it`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 6,
-    title: "jealousy"
+    title: 'jealousy',
   },
   {
     poem: `in order to fall asleep
@@ -150,9 +150,9 @@ let poemsArr = [
             can my mind
             <br/>
             drift off to sleep`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 7,
-    title: "pretend"
+    title: 'pretend',
   },
   {
     poem: `it isn’t what we left behind
@@ -162,8 +162,8 @@ let poemsArr = [
             it’s what we could’ve built
             <br/>
             had we stayed`,
-    chapter: "wilting",
-    id: 8
+    chapter: 'wilting',
+    id: 8,
   },
   {
     poem: `i can still see our construction hats lying
@@ -197,9 +197,9 @@ let poemsArr = [
             building something new
             <br/>
             with someone else`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 9,
-    title: "the construction site of our future"
+    title: 'the construction site of our future',
   },
   {
     poem: `i live for that first second in the morning
@@ -227,9 +227,9 @@ let poemsArr = [
           of realizing
           <br/>
           that you’ve left`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 10,
-    title: "the first mornings without you"
+    title: 'the first mornings without you',
   },
   {
     poem: `the hummingbirds tell me
@@ -241,16 +241,16 @@ let poemsArr = [
             while listening to them
             <br/>
             describe every detail`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 11,
-    title: "hunger"
+    title: 'hunger',
   },
   {
     poem: `i envy the winds
            <br/>
            who still witness you`,
-    chapter: "wilting",
-    id: 12
+    chapter: 'wilting',
+    id: 12,
   },
   {
     poem: `i could be anything
@@ -258,8 +258,8 @@ let poemsArr = [
             in the world
             <br/>
             but i wanted to be his`,
-    chapter: "wilting",
-    id: 13
+    chapter: 'wilting',
+    id: 13,
   },
   {
     poem: `i tried to leave many times but
@@ -297,14 +297,14 @@ let poemsArr = [
             when at the very least
             <br/>
             i had it`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 14,
-    title: "addiction"
+    title: 'addiction',
   },
   {
     poem: `you break women in like shoes`,
-    chapter: "wilting",
-    id: 15
+    chapter: 'wilting',
+    id: 15,
   },
   {
     poem: `loving you was breathing
@@ -312,11 +312,11 @@ let poemsArr = [
             but that breath disappearing
             <br/>
             before it filled my lungs`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 16,
-    title: "when it goes too soon"
+    title: 'when it goes too soon',
   },
-  
+
   {
     poem: `you cannot
             <br/>
@@ -329,19 +329,19 @@ let poemsArr = [
             happening inside me
             <br/>
             to be your convenient option`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 18,
-    title: "not your hobby"
+    title: 'not your hobby',
   },
-  
+
   {
     poem: `you took the sun with you
             <br/>
             when you left`,
-    chapter: "wilting",
-    id: 19
+    chapter: 'wilting',
+    id: 19,
   },
-   {
+  {
     poem: `i remained committed
           <br/>
           long after you were gone
@@ -357,11 +357,11 @@ let poemsArr = [
           when you came back
           <br/>
           and asked where my hands had been`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 20,
-    title: "loyal"
+    title: 'loyal',
   },
-   {
+  {
     poem: `when you plunged the knife into me
             <br/>
             you also began bleeding
@@ -373,13 +373,13 @@ let poemsArr = [
             love is a double-edged knife
             <br/>
             you will suffer the way you make me suffer`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 21,
   },
   {
     poem: `i think my body knew you would not stay`,
-    chapter: "wilting",
-    id: 22
+    chapter: 'wilting',
+    id: 22,
   },
   {
     poem: `i long
@@ -395,9 +395,9 @@ let poemsArr = [
           who wants me
           <br/>
           cause i want someone else`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 23,
-    title: "the human condition"
+    title: 'the human condition',
   },
   {
     poem: `i wonder if i am
@@ -435,8 +435,8 @@ let poemsArr = [
             yours telling me i am beautiful
             <br/>
             yours telling me i am enough`,
-    chapter: "wilting",
-    id: 24
+    chapter: 'wilting',
+    id: 24,
   },
   {
     poem: `you’re everywhere
@@ -444,8 +444,8 @@ let poemsArr = [
           except right here
           <br/>
           and it hurts`,
-    chapter: "wilting",
-    id: 25
+    chapter: 'wilting',
+    id: 25,
   },
   {
     poem: `show me a picture
@@ -473,8 +473,8 @@ let poemsArr = [
             did you come crawling out of her
             <br/>
             with what you couldn’t in me`,
-    chapter: "wilting",
-    id: 26
+    chapter: 'wilting',
+    id: 26,
   },
   {
     poem: `what draws you to her
@@ -482,13 +482,13 @@ let poemsArr = [
             tell me what you like
             <br/>
             so i can practice`,
-    chapter: "wilting",
-    id: 27
+    chapter: 'wilting',
+    id: 27,
   },
   {
     poem: `your absence is a missing limb`,
-    chapter: "wilting",
-    id: 28
+    chapter: 'wilting',
+    id: 28,
   },
   {
     poem: `you call to tell me you miss me
@@ -520,8 +520,8 @@ let poemsArr = [
             if i’m not the love of your life
             <br/>
             i’ll be the greatest loss instead`,
-    chapter: "wilting",
-    id: 30
+    chapter: 'wilting',
+    id: 30,
   },
   {
     poem: `where do we go from here my love
@@ -537,8 +537,8 @@ let poemsArr = [
             when you are pulling me in just by standing there
             <br/>
             how do i turn around and choose myself`,
-    chapter: "wilting",
-    id: 31
+    chapter: 'wilting',
+    id: 31,
   },
   {
     poem: `day by day i realize
@@ -546,9 +546,9 @@ let poemsArr = [
             everything i miss about you
             <br/>
             was never there in the first place`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 32,
-    title: `the person i fell in love with was a mirage`
+    title: `the person i fell in love with was a mirage`,
   },
   {
     poem: `they leave
@@ -558,9 +558,9 @@ let poemsArr = [
             they come back
             <br/>
             and act like they never left`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 33,
-    title: "ghosts"
+    title: 'ghosts',
   },
   {
     poem: `i tried to find it
@@ -568,9 +568,9 @@ let poemsArr = [
             but there was no answer
             <br/>
             at the end of the last conversation`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 34,
-    title: "closure"
+    title: 'closure',
   },
   {
     poem: `you ask
@@ -584,9 +584,9 @@ let poemsArr = [
           the mouth of a flower
           <br/>
           and then settle for its leaves`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 35,
-    title: "i don’t need more friends"
+    title: 'i don’t need more friends',
   },
   {
     poem: `why is it
@@ -594,8 +594,8 @@ let poemsArr = [
             that when the story ends
             <br/>
             we begin to feel all of it`,
-    chapter: "wilting",
-    id: 36
+    chapter: 'wilting',
+    id: 36,
   },
   {
     poem: `<em>rise</em>
@@ -621,7 +621,7 @@ let poemsArr = [
             a single part of you left they’ve touched
             <br/>
             your eyes finally just your eyes
-            <br/>
+            <br/> notice everything i d
             not the eyes which held them
             <br/>
             you will make it to the end
@@ -631,17 +631,17 @@ let poemsArr = [
             go on
             <br/>
             open the door to the rest of it`,
-    chapter: "wilting",
+    chapter: 'wilting',
     id: 37,
-    title: "time"
+    title: 'time',
   },
   //Chapter 2: Falling - starts at index 35
   {
     poem: `i notice everything i do not have
             <br/>
             and decide it is beautiful`,
-    chapter: "falling",
-    id: 1
+    chapter: 'falling',
+    id: 1,
   },
   {
     poem: `i hardened under the last loss. it took something human out of me. i used to
@@ -656,9 +656,9 @@ let poemsArr = [
             <br/>
             and all i dream is to soften.
             `,
-    chapter: "falling",
+    chapter: 'falling',
     id: 2,
-    title: "numbness"
+    title: 'numbness',
   },
   {
     poem: `yesterday
@@ -672,9 +672,9 @@ let poemsArr = [
           all that’s left alive here is me
           <br/>
           and i barely feel like living`,
-    chapter: "falling",
+    chapter: 'falling',
     id: 3,
-    title: "depression is a shadow living inside me"
+    title: 'depression is a shadow living inside me',
   },
   {
     poem: `<em>why are you so unkind to me</em>
@@ -685,9 +685,8 @@ let poemsArr = [
           <em>cause you don’t look like them</em>
           <br/>
           i tell her`,
-    chapter: "falling",
-    id: 4
-    
+    chapter: 'falling',
+    id: 4,
   },
   {
     poem: `you are waiting for someone
@@ -701,9 +700,9 @@ let poemsArr = [
             hoping that someone will realize
             <br/>
             they can’t live theirs without you`,
-    chapter: "falling",
+    chapter: 'falling',
     id: 5,
-    title: "realizations don’t work like that"
+    title: 'realizations don’t work like that',
   },
   {
     poem: `a lot of times
@@ -713,9 +712,9 @@ let poemsArr = [
           for not doing what
           <br/>
           we should have done for ourselves`,
-    chapter: "falling",
+    chapter: 'falling',
     id: 6,
-    title: "realizations"
+    title: 'realizations',
   },
   {
     poem: `why
@@ -731,9 +730,9 @@ let poemsArr = [
           did you forget
           <br/>
           or did you purposely leave me unfinished`,
-    chapter: "falling",
+    chapter: 'falling',
     id: 7,
-    title:  "conversations with god"
+    title: 'conversations with god',
   },
   {
     poem: `they did not tell me it would hurt like this
@@ -775,9 +774,9 @@ let poemsArr = [
             a friend or a lover
             <br/>
             a loss is a loss is a loss`,
-    chapter: "falling",
+    chapter: 'falling',
     id: 8,
-    title: "the underrated heartache"
+    title: 'the underrated heartache',
   },
   {
     poem: `i hear a thousand kind words about me
@@ -787,9 +786,9 @@ let poemsArr = [
           yet i hear one insult
           <br/>
           and all confidence shatters`,
-    chapter: "falling",
+    chapter: 'falling',
     id: 9,
-    title: "focusing on the negative"
+    title: 'focusing on the negative',
   },
   {
     poem: `when snow falls
@@ -807,9 +806,9 @@ let poemsArr = [
             when flowers bloom
             <br/>
             i pick them`,
-    chapter: "falling",
+    chapter: 'falling',
     id: 11,
-    title: "unappreciative"
+    title: 'unappreciative',
   },
   {
     poem: `tell them i was the
@@ -817,8 +816,8 @@ let poemsArr = [
             warmest place you knew
             <br/>
             and you turned me cold`,
-    chapter: "falling",
-    id: 12
+    chapter: 'falling',
+    id: 12,
   },
   {
     poem: `at home that night
@@ -880,8 +879,8 @@ let poemsArr = [
           mine
           <br/>
           the fourth hour i prayed`,
-    chapter: "falling",
-    id: 13
+    chapter: 'falling',
+    id: 13,
   },
   {
     poem: `it felt like you threw me
@@ -889,8 +888,8 @@ let poemsArr = [
             so far from myself
             <br/>
             i’ve been trying to find my way back ever since`,
-    chapter: "falling",
-    id: 14
+    chapter: 'falling',
+    id: 14,
   },
   {
     poem: `i reduced my body to aesthetics
@@ -906,8 +905,8 @@ let poemsArr = [
           foolish enough to not realize
           <br/>
           i was already living in one`,
-    chapter: "falling",
-    id: 15
+    chapter: 'falling',
+    id: 15,
   },
   {
     poem: `the irony of loneliness
@@ -915,9 +914,9 @@ let poemsArr = [
             is we all feel it
             <br/>
             at the same time`,
-            chapter: "falling",
-            id: 16,
-            title: "together"
+    chapter: 'falling',
+    id: 16,
+    title: 'together',
   },
   {
     poem: `we have been dying
@@ -925,9 +924,9 @@ let poemsArr = [
             since we got here
             <br/>
             and forgot to enjoy the view`,
-    chapter: "falling",
+    chapter: 'falling',
     id: 17,
-    title: "live fully"
+    title: 'live fully',
   },
   {
     poem: `you were mine
@@ -939,8 +938,8 @@ let poemsArr = [
           and my life
           <br/>
           is full`,
-    chapter: "falling",
-    id: 18
+    chapter: 'falling',
+    id: 18,
   },
   {
     poem: `my eyes
@@ -982,8 +981,8 @@ let poemsArr = [
           for a beauty that makes heads turn
           <br/>
           every moment day and night`,
-    chapter: "falling",
-    id: 19
+    chapter: 'falling',
+    id: 19,
   },
   {
     poem: `this place makes me
@@ -996,9 +995,9 @@ let poemsArr = [
           <br/>
           the people around me
           `,
-    chapter: "falling",
+    chapter: 'falling',
     id: 20,
-    title: "introvert"
+    title: 'introvert',
   },
   {
     poem: `you must see no worth in yourself
@@ -1013,63 +1012,55 @@ let poemsArr = [
     <br/>
     and reduce me to nothing
     `,
-    chapter: "falling",
+    chapter: 'falling',
     id: 21,
-    title: "worth is not something we transfer"
+    title: 'worth is not something we transfer',
   },
   {
     poem: `you do not just wake up and become the butterfly`,
-    chapter: "falling",
+    chapter: 'falling',
     id: 22,
-    title: "growth is a process"
+    title: 'growth is a process',
   },
   {
     poem: ``,
-    chapter: "",
-    id: ""
+    chapter: '',
+    id: '',
   },
-  
 ]
 
-newPoem(Math.floor(Math.random()*poemsArr.length))
+console.log(poemsArr)
 
-generateBtn.addEventListener("click", ranNum);
+newPoem()
 
-
-
-function newPoem(num){
-  if (poemsArr.length === 0){
-    poemsArr.push(...alreadyDisplayed)
-    alreadyDisplayed = []
-  }
-
-
-  poemDisplay.innerHTML = ""
-  let poemDiv = document.createElement("div")
-  let chapterDiv = document.createElement("div")
-  poemDiv.setAttribute("class", `poem poem-${poemsArr[num].id}-${poemsArr[num].chapter}`)
-  chapterDiv.setAttribute("class", "chapter")
-  
-  poemDiv.innerHTML = poemsArr[num].poem
-  
-  if (poemsArr[num].hasOwnProperty("title")){
-    chapterDiv.innerHTML = `<span>"${poemsArr[num].title}"</span>, from <span>${poemsArr[num].chapter}</span>`
-  }else{
-     chapterDiv.innerHTML = `<span>${poemsArr[num].chapter}</span>, poem #${poemsArr[num].id}`  
-  }
-  
-  
-  poemDisplay.appendChild(poemDiv)
-  poemDisplay.appendChild(chapterDiv)
-  console.log(poemsArr[num].chapter, poemsArr[num].id)
-
-  alreadyDisplayed.push(poemsArr[num])
-  poemsArr.splice(num, 1)
-  console.log(poemsArr.length, alreadyDisplayed.length)
+function newPoem() {
+  const poemIndex = generateRandompoemIndex()
+  displayPoemToPage(poemIndex)
 }
 
-function ranNum(){
-  let newNum = Math.floor(Math.random() * poemsArr.length)
-  
-  newPoem(newNum)
+function displayPoemToPage(poemIndex) {
+  poemDisplay.innerHTML = ''
+  let poemDiv = document.createElement('div')
+  let chapterDiv = document.createElement('div')
+  poemDiv.setAttribute(
+    'class',
+    `poem poem-${poemsArr[poemIndex].id}-${poemsArr[poemIndex].chapter}`
+  )
+  chapterDiv.setAttribute('class', 'chapter')
+
+  poemDiv.innerHTML = poemsArr[poemIndex].poem
+
+  if (poemsArr[poemIndex].hasOwnProperty('title')) {
+    chapterDiv.innerHTML = `<span>"${poemsArr[poemIndex].title}"</span>, from <span>${poemsArr[poemIndex].chapter}</span>`
+  } else {
+    chapterDiv.innerHTML = `<span>${poemsArr[poemIndex].chapter}</span>, poem #${poemsArr[poemIndex].id}`
+  }
+
+  poemDisplay.appendChild(poemDiv)
+  poemDisplay.appendChild(chapterDiv)
+}
+
+function generateRandompoemIndex() {
+  const poemIndex = Math.floor(Math.random() * poemsArr.length)
+  return poemIndex
 }
