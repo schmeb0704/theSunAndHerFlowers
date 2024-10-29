@@ -1038,15 +1038,27 @@ function newPoem() {
 
 function displayPoemToPage(poemIndex) {
   poemDisplay.innerHTML = ''
-  let poemDiv = document.createElement('div')
-  let chapterDiv = document.createElement('div')
+  const poemElement = createPoemContent(poemIndex)
+  const poemInfoElement = createPoemInformation(poemIndex)
+
+  poemDisplay.appendChild(poemElement)
+  poemDisplay.appendChild(poemInfoElement)
+}
+
+function createPoemContent(poemIndex) {
+  const poemDiv = document.createElement('div')
   poemDiv.setAttribute(
     'class',
     `poem poem-${poemsArr[poemIndex].id}-${poemsArr[poemIndex].chapter}`
   )
-  chapterDiv.setAttribute('class', 'chapter')
-
   poemDiv.innerHTML = poemsArr[poemIndex].poem
+
+  return poemDiv
+}
+
+function createPoemInformation(poemIndex) {
+  let chapterDiv = document.createElement('div')
+  chapterDiv.setAttribute('class', 'chapter')
 
   if (poemsArr[poemIndex].hasOwnProperty('title')) {
     chapterDiv.innerHTML = `<span>"${poemsArr[poemIndex].title}"</span>, from <span>${poemsArr[poemIndex].chapter}</span>`
@@ -1054,8 +1066,7 @@ function displayPoemToPage(poemIndex) {
     chapterDiv.innerHTML = `<span>${poemsArr[poemIndex].chapter}</span>, poem #${poemsArr[poemIndex].id}`
   }
 
-  poemDisplay.appendChild(poemDiv)
-  poemDisplay.appendChild(chapterDiv)
+  return chapterDiv
 }
 
 function generateRandompoemIndex() {
